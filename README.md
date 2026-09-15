@@ -2,6 +2,10 @@
 
 > Initial project plan — planning stage. No application features have been implemented yet.
 
+The [first-release requirements](docs/product-requirements.md) define testable workflows, release boundaries, and open implementation decisions. T01 documentation is complete; technical planning is next.
+
+Confirmed first-release direction: **Android first**, with **semantic segmentation brush painting and erasing prioritized**. Instance segmentation is deferred; detection boxes and class-region polygon tools remain in the first-release baseline.
+
 ## Purpose
 
 Build a simple, offline mobile application for manually labeling computer vision datasets and exporting them for local model training. The project takes inspiration from dataset preparation workflows found in tools such as Roboflow, while focusing on accessible, precise manual work on a phone.
@@ -70,7 +74,7 @@ The editor should provide:
 - Undo/redo, autosave, and recovery after interruption.
 - Two-finger pan and pinch zoom, with precise editing assistance to be evaluated on devices.
 
-Choose project task explicitly: object detection, semantic segmentation, instance segmentation, or image classification. The first-release task subset is still open; tools and export choices must match the selected task.
+Choose project task explicitly. The first-release baseline covers object detection and semantic segmentation; instance segmentation and image classification are deferred. Tools and export choices must match the selected task.
 
 ### 4. Inspect images and annotations
 
@@ -129,7 +133,7 @@ See [Implementation Tasks](IMPLEMENTATION-TASKS.md) for the dependency-ordered b
 
 1. **Design and technical decisions:** choose target operating systems, mobile framework, initial task subset, storage approach, internal annotation model, and first export target. Prototype touch interaction and assess realistic memory/storage limits.
 2. **Complete detection workflow:** implement local projects, image import review, boxes, status tracking, autosave/recovery, final review, splitting, and one validated export. This is a proposed implementation sequence, not a decision to remove segmentation from scope.
-3. **Segmentation:** implement the chosen first segmentation workflow, then add the other needed tools and validated exports. Decide whether semantic or instance segmentation comes first; brush/eraser may move earlier if painting is the primary use case.
+3. **Segmentation:** implement semantic masks, prioritizing brush/eraser before polygon editing, with validated exports. Painting may move earlier in the prototype sequence; instance segmentation is deferred.
 4. **Video and transformations:** implement frame extraction, source grouping, preprocessing, and training-only augmentation. Video extraction may move earlier if essential to initial users.
 5. **Reliability and release readiness:** verify backup/restore, interruption recovery, large-project behavior, device interaction, export compatibility, and user documentation.
 
@@ -178,9 +182,9 @@ Create these documents as their content becomes concrete rather than filling the
 
 ## Decisions still open
 
-- Android first, iOS first, or both, and minimum supported devices.
+- Minimum supported Android version and test devices; iOS is deferred.
 - Framework and local storage strategy, including backup format and schema migrations.
-- First segmentation mode and priority of brush painting versus polygons.
+- Semantic-mask storage and editing details, with brush painting/erasing prioritized before polygon editing.
 - First YOLO training implementation/version and other export targets to validate.
 - Zoom bounds, supported input types, and practical project size limits.
 - Licensing and distribution approach.

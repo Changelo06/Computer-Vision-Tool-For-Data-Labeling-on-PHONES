@@ -2,6 +2,10 @@
 
 Status: proposed execution plan; application implementation has not started.
 
+Progress: **T01 — Done (requirements documentation)**. See [first-release requirements](docs/product-requirements.md) for acceptance examples and open decision gates. T02 is next; all implementation tasks remain Planned. Completion of T01 does not mean platform/export choices or application behavior are verified.
+
+Owner-confirmed direction from T01: Android first; semantic masks with brush painting/erasing prioritized. Platform tooling, device versions, and exact export consumers still need technical validation.
+
 Follow the [project plan](README.md), [agent instructions](AGENTS.md), and [executive review policy](Executive-Code-Reviewer.md). This backlog sequences the agreed scope without choosing an unresolved technology stack.
 
 ## Planning around account availability
@@ -70,7 +74,7 @@ Milestone C is a **detection prototype**, not the complete planned app. It does 
 
 ## Milestone D — Manual segmentation
 
-T01–T03 must define whether semantic or instance segmentation comes first. Bring this milestone earlier if painting is the primary owner priority; retain dependencies and validated exports.
+T01 confirms semantic segmentation first, prioritizing brush painting/erasing. Within this milestone, implement T17 → T19a → T19b before T18, then T20. Polygons represent semantic class regions. T02 can move segmentation earlier in the overall prototype sequence while retaining its dependencies and validated exports.
 
 | ID | Size | Task | Depends on | Acceptance / evidence |
 | --- | --- | --- | --- | --- |
@@ -103,8 +107,8 @@ Support for a second segmentation mode is a follow-on task group requiring its o
 
 ## First work sessions
 
-1. **Next session: T01.** Turn the existing discussion into concise acceptance requirements. Resolve platform preference and segmentation priority before dependent implementation.
-2. **Following session: T02.** Establish the build/device path and record technical decisions. Do not scaffold an arbitrary framework before this is resolved.
+1. **Completed: T01.** First-release requirements and acceptance examples are documented; pending owner/technical decisions are explicit gates for dependent work.
+2. **Next session: T02.** Establish the build/device path and record technical decisions. Do not scaffold an arbitrary framework before this is resolved.
 3. **Following session: T03.** Establish the durable annotation and workflow model to reduce later rework.
 4. **Then T04.** Deliver the first runnable foundation; use actual consumption from these sessions to revise the daily pace.
 
