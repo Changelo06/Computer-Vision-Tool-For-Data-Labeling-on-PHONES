@@ -125,6 +125,8 @@ Validate export fixtures with the intended training loader before claiming compa
 
 ## Proposed delivery stages
 
+See [Implementation Tasks](IMPLEMENTATION-TASKS.md) for the dependency-ordered backlog, acceptance checks, and a usage-aware session rhythm. Task sizes are planning estimates, not promised daily token costs.
+
 1. **Design and technical decisions:** choose target operating systems, mobile framework, initial task subset, storage approach, internal annotation model, and first export target. Prototype touch interaction and assess realistic memory/storage limits.
 2. **Complete detection workflow:** implement local projects, image import review, boxes, status tracking, autosave/recovery, final review, splitting, and one validated export. This is a proposed implementation sequence, not a decision to remove segmentation from scope.
 3. **Segmentation:** implement the chosen first segmentation workflow, then add the other needed tools and validated exports. Decide whether semantic or instance segmentation comes first; brush/eraser may move earlier if painting is the primary use case.
