@@ -141,6 +141,8 @@ Outside the initial scope: AI-assisted labeling, cloud synchronization, hosted d
 
 Documentation is part of implementation work and should describe actual behavior, including limitations.
 
+The [Executive Code Reviewer](Executive-Code-Reviewer.md) defines the project's vision, mission, review policy, and required pre-push verdict. [Repository agent instructions](AGENTS.md) direct coding agents to follow that review before pushing. These documents provide a review process; automated Git enforcement is not installed.
+
 1. Keep this README as the project entry point; update status and links as features become real.
 2. Before substantial coding, document the chosen architecture and initial data model.
 3. Record significant choices as short architecture decision records containing context, decision, alternatives, and consequences.
